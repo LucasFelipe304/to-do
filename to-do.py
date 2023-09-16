@@ -3,7 +3,16 @@ def allOptions():
   print('2 | Change list')
   print('3 | Delete item')
 
-
 allOptions()
 
-userChoice = str(input('What do you want to-do: '))
+
+def userChoice():
+  user = str(input('What do you want to-do: '))
+  print('--->', user)
+  return user
+
+userChoice()
+
+
+
+
