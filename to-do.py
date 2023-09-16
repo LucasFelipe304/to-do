@@ -4,4 +4,6 @@ def allOptions():
   print('3 | Delete item')
 
 
+allOptions()
 
+userChoice = str(input('What do you want to-do: '))
