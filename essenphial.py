@@ -8,12 +8,14 @@ def sep():
 
 def lines():
   print('_' * 20)
+
 def allOptions():
   lines()
   space()
   print('1 | Add item ')
   print('2 | Delete item')
   print('3 | View list')
+  print('4 | Exit')
   lines()
 
 while True:
@@ -68,11 +70,14 @@ while True:
         i += 1
       return general_list
     userViewList()
-    
+
   elif choiceUserOption == '3' and len(general_list) <= 0:
     print("You can't to see items because your list it's empty.")
     space()
 
+  if choiceUserOption == '4':
+    space()
+    exit('Developed by Lucas Felipe - github.com/LucasFelipe304')
  
 
 
