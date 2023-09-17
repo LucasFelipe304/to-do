@@ -13,40 +13,40 @@ def allOptions():
   print('3 | View list')
 
 while True:
-  userAddItem = str(input('Firstly, enter what you want to add: '))
-  if len(userAddItem) > 0:
+  def AddItem():
+    userAddItem = str(input('Enter what you want to add: '))
     general_list.append(userAddItem)
-    print('--- > Added item!')
-    break
-
-space()
-
+    print(f'--- > Added item! [{userAddItem}]')
+    return general_list
+  break
 
 allOptions()
+while True:
 
+  variableChangeYourOption = str(input('Change your option: '))
+  if variableChangeYourOption == '1':
+    AddItem()
 
-variableChangeYourOption = str(input('Change your option: '))
+  if variableChangeYourOption == '2' and len(general_list) > 0:
+    def userDeleteItem():
+      for item in enumerate(general_list):
+        print(item)
+      getListIndex = int(input('Enter the index of the item you want to change: ')) 
+      print(f'--- > Item [{general_list[getListIndex]}] removed.!')
+      general_list.pop(getListIndex)
+      return general_list
+    userDeleteItem()
+  elif variableChangeYourOption == '2' and len(general_list) <= 0:
+    print("""You can't remove items because your list it's empty.""")
 
-if variableChangeYourOption == '2' and len(general_list) > 0:
-  def userDeleteItem():
-    for item in enumerate(general_list):
-      print(item)
-    getListIndex = int(input('Enter the index of the item you want to change: ')) 
-    print(f'--- > Item [{general_list[getListIndex]}] removed.!')
-    general_list.pop(getListIndex)
-    return general_list
-  userDeleteItem()
-elif variableChangeYourOption == '2' and len(general_list) <= 0:
-  print("""You can't remove items because your list it's empty.""")
-
-if variableChangeYourOption == '3':
-  def userViewList():
-    i = 0
-    for item in general_list:
-      print(f'{i} -', item)
-      i += 1
-    return general_list
-  userViewList()
+  if variableChangeYourOption == '3':
+    def userViewList():
+      i = 0
+      for item in general_list:
+        print(f'{i} -', item)
+        i += 1
+      return general_list
+    userViewList()
 
 
  
